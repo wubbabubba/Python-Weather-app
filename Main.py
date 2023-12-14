@@ -7,10 +7,12 @@ cityName = input("What is the name of the city you'd like to choose?")
 print(cityName)
 response = requests.get("http://api.openweathermap.org/geo/1.0/direct?q=Paris,FR&limit=5&appid=78e3a6f3ae62901bfa2fcc723df53324")
 data = response.json()
-print(data)
+
 new_json = json.dumps(data, indent=2)
-option1 = data['name'][4]
+for x in data:  
+    print(x)
+#option1 = data['name']
 #lat = response['lat']
 #longitude = data['lon']
-print(option1)
+print(data['name'])
 #print(longitude)
