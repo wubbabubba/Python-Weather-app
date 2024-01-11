@@ -11,11 +11,16 @@ data = response.json()
 
 new_json = json.dumps(data, indent=2)
 
-
+count = 0
 for x in data:  
-    print(x['name'][1])
- #   option1 = [x['name'], x['state'], x['country']]
-  #  print (option1)
+    option1 = [x['name'], x['state'], x['country']] 
+    count = count + 1
+    print ("Option", count, option1)
+
+choice = input("Choose an option 1 - " + str(count) + " ")  
+choice = int(choice)
+print(data[choice - 1]['lat'])
+print(data[choice - 1]['lon'])    
 
 #option1 = data['name']
 #lat = response['lat']
